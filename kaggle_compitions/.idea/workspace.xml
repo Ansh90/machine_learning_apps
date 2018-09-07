@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/com/kaggle/NLP/word2vector/Word2Vector.py" description="# print(readerObj.testing.rmsle(y_test, y_expected..." line="164" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="19d920d6-0da1-417e-91e3-6996141585ae" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="kaggle_housing_comp" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="NLP_BagOfWords.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/kaggle/NLP/bagOfWords/NLP_BagOfWords.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="39" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Word2Vector.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/kaggle/NLP/word2vector/Word2Vector.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-577">
+              <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestingStuff.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/com/kaggle/NLP/word2vector/TestingStuff.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>from sklearn\.linear_model import ElasticNet\, Lasso\,  BayesianRidge\, LassoLarsIC\nfrom sklearn\.ensemble import RandomForestRegressor\,  GradientBoostingRegressor\nfrom sklearn\.kernel_ridge import KernelRidge\nfrom sklearn\.pipeline import make_pipeline\nfrom sklearn\.preprocessing import RobustScaler\nimport xgboost as xgb\nimport lightgbm as lgb\nfrom sklearn\.base import BaseEstimator\, TransformerMixin\, RegressorMixin\, clone\nfrom sklearn\.model_selection import KFold\, cross_val_score\, train_test_split\nfrom sklearn\.metrics import mean_squared_error\n\nfrom com\.kaggle\.housing\.code\.StackingAverageModel import StackingAveragedModel\n\n\nclass EstimatorEntryPoint\:\n    def __init__\(self\)\:\n\n\nlasso \= make_pipeline\(RobustScaler\(\)\, Lasso\(alpha\=0\.0005\, random_state\=1\)\)\nENet \= make_pipeline\(RobustScaler\(\)\, ElasticNet\(alpha\=0\.0005\, l1_ratio\=\.9\, random_state\=3\)\)\nKRR \= KernelRidge\(alpha\=0\.6\, kernel\=\'polynomial\'\, degree\=2\, coef0\=2\.5\)\nGBoost \= GradientBoostingRegressor\(n_estimators\=3000\, learning_rate\=0\.05\,\n                                           max_depth\=4\, max_features\=\'sqrt\'\,\n                                           min_samples_leaf\=15\, min_samples_split\=10\,\n                                           loss\=\'huber\'\, random_state\=5\)\nmodel_xgb \= xgb\.XGBRegressor\(colsample_bytree\=0\.4603\, gamma\=0\.0468\,\n                                     learning_rate\=0\.05\, max_depth\=3\,\n                                     min_child_weight\=1\.7817\, n_estimators\=2200\,\n                                     reg_alpha\=0\.4640\, reg_lambda\=0\.8571\,\n                                     subsample\=0\.5213\, silent\=1\,\n                                     random_state\=7\, nthread\=\-1\)\nmodel_lgb \= lgb\.LGBMRegressor\(objective\=\'regression\'\, num_leaves\=5\,\n                                      learning_rate\=0\.05\, n_estimators\=720\,\n                                      max_bin\=55\, bagging_fraction\=0\.8\,\n                                      bagging_freq\=5\, feature_fraction\=0\.2319\,\n                                      feature_fraction_seed\=9\, bagging_seed\=9\,\n                                      min_data_in_leaf\=6\, min_sum_hessian_in_leaf\=11\)\n\n\ndef _main_\(self\)\:\n    models \= \(self\.ENet\, self\.GBoost\, self\.KRR\, self\.lasso\)\n    modelsAvg \=  StackingAveragedModel\(models\)\n\n</find>
+      <find>\# import lightgbm as lgb\n\# import xgboost as xgb\nimport numpy as np\nimport pandas as pd\nfrom sklearn\.ensemble import GradientBoostingRegressor\nfrom sklearn\.kernel_ridge import KernelRidge\nfrom sklearn\.linear_model import ElasticNet\, Lasso\nfrom sklearn\.pipeline import make_pipeline\nfrom sklearn\.preprocessing import RobustScaler\nimport os\nfrom com\.kaggle\.housing\.code\.StackingAverageModel import StackingAveragedModel\nfrom com\.kaggle\.housing\.code\.AveragingModels import AveragingModels\nfrom sklearn\.model_selection import cross_val_score\, cross_val_predict\, KFold\n\nclass EstimatorEntryPoint\:\n\n    lasso \= make_pipeline\(RobustScaler\(\)\, Lasso\(alpha\=0\.0005\, random_state\=1\)\)\n    ENet \= make_pipeline\(RobustScaler\(\)\, ElasticNet\(alpha\=0\.0005\, l1_ratio\=\.9\, random_state\=3\)\)\n    KRR \= KernelRidge\(alpha\=0\.6\, kernel\=\'polynomial\'\, degree\=2\, coef0\=2\.5\)\n    GBoost \= GradientBoostingRegressor\(n_estimators\=3000\, learning_rate\=0\.05\,\n                                   max_depth\=4\, max_features\=\'sqrt\'\,\n                                   min_samples_leaf\=15\, min_samples_split\=10\,\n                                   loss\=\'huber\'\, random_state\=5\)\n    \# model_xgb \= xgb\.XGBRegressor\(colsample_bytree\=0\.4603\, gamma\=0\.0468\,\n    \#                          learning_rate\=0\.05\, max_depth\=3\,\n    \#                          min_child_weight\=1\.7817\, n_estimators\=2200\,\n    \#                          reg_alpha\=0\.4640\, reg_lambda\=0\.8571\,\n    \#                          subsample\=0\.5213\, silent\=1\,\n    \#                          random_state\=7\, nthread\=\-1\)\n    \# model_lgb \= lgb\.LGBMRegressor\(objective\=\'regression\'\, num_leaves\=5\,\n    \#                           learning_rate\=0\.05\, n_estimators\=720\,\n    \#                           max_bin\=55\, bagging_fraction\=0\.8\,\n    \#                           bagging_freq\=5\, feature_fraction\=0\.2319\,\n    \#                           feature_fraction_seed\=9\, bagging_seed\=9\,\n    \#                           min_data_in_leaf\=6\, min_sum_hessian_in_leaf\=11\)\n\n\n\ndef _main_\(self\)\:\n        print\(os\.getcwd\(\)\)\n        train \= pd\.read_csv\(\&quot;ls\&quot;\, \&quot;train\.csv\&quot;\)\n\n        pd\.set_option\(\'display\.float_format\'\,\n                      lambda x\: \'\{\:\.3f\}\'\.format\(x\)\)  \# Limiting floats output to 3 decimal points\n\n        from subprocess import check_output\n        print\(check_output\(\[\&quot;ls\&quot;\, \&quot;\.\&quot;\]\)\.decode\(\&quot;utf8\&quot;\)\)  \# check the files available in the directory\n\n        self\.train \= pd\.read_csv\(\'\.\.\/input\/train\.csv\'\)\n        self\.test \= pd\.read_csv\(\'\.\.\/input\/test\.csv\'\)\n\n        print\(\&quot;train \: \&quot; \+ str\(train\.shape\)\)\;\n        models \= \(self\.ENet\, self\.GBoost\, self\.KRR\, self\.lasso\)\n        modelsAvg \= AveragingModels\(models\)\n\n    def rmsle_cv\(model\)\:\n        kf \= KFold\(5\, shuffle\=True\, random_state\=42\)\.get_n_splits\(train\.values\)\n        rmse \= np\.sqrt\(\-cross_val_score\(model\, train\.values\, y_train\, scoring\=\&quot;neg_mean_squared_error\&quot;\, cv\=kf\)\)\n        return \(rmse\)</find>
+      <find>X_train</find>
+      <find>csv</find>
+      <find>skew</find>
+      <find>check_Output</find>
+      <find>float</find>
+      <find>np.array</find>
+      <find>print</find>
+      <find>shap</find>
+      <find>del</find>
+      <find>count</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>print</replace>
+      <replace>print(</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/com/kaggle/housing/code/HousingCom_Regression_applied_Ames_dataset.py" />
+        <option value="$PROJECT_DIR$/com/kaggle/housing/code/HousingCom_Regression_applied_Ames.ipynb" />
+        <option value="$PROJECT_DIR$/com/kaggle/housing/code/StackingEnsambler.py" />
+        <option value="$PROJECT_DIR$/com/kaggle/housing/code/AveragingModels.py" />
+        <option value="$PROJECT_DIR$/com/python/learning/ClassLevelCalling.py" />
+        <option value="$PROJECT_DIR$/com/kaggle/housing/code/testing.py" />
+        <option value="$PROJECT_DIR$/com/kaggle/housing/code/StackingAverageModel.py" />
+        <option value="$PROJECT_DIR$/com/kaggle/housing/code/StackingAveragedModel.py" />
+        <option value="$PROJECT_DIR$/com/kaggle/housing/code/StackingEnsamblingkernel.ipynb" />
+        <option value="$PROJECT_DIR$/com/kaggle/NLP/spooky_author_identification/abhishekKernal.ipynb" />
+        <option value="$PROJECT_DIR$/com/kaggle/housing/code/EstimatorEntryPoint.py" />
+        <option value="$PROJECT_DIR$/com/kaggle/NLP/bagOfWords/BagOfWordsTutorial.py" />
+        <option value="$PROJECT_DIR$/com/kaggle/NLP/bagOfWords/NLP_BagOfWords.py" />
+        <option value="$PROJECT_DIR$/com/kaggle/NLP/word2vector/Word2Vector.py" />
+        <option value="$PROJECT_DIR$/com/kaggle/NLP/word2vector/TestingStuff.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="797" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="kaggle_housing_comp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kaggle_housing_comp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kaggle_housing_comp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kaggle_housing_comp" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kaggle_housing_comp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kaggle_housing_comp" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kaggle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kaggle_housing_comp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kaggle_housing_comp" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kaggle" type="462c0819:PsiDirectoryNode" />
+              <item name="NLP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kaggle_housing_comp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kaggle_housing_comp" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kaggle" type="462c0819:PsiDirectoryNode" />
+              <item name="NLP" type="462c0819:PsiDirectoryNode" />
+              <item name="bagOfWords" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kaggle_housing_comp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kaggle_housing_comp" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kaggle" type="462c0819:PsiDirectoryNode" />
+              <item name="NLP" type="462c0819:PsiDirectoryNode" />
+              <item name="bagOfWords" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kaggle_housing_comp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kaggle_housing_comp" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kaggle" type="462c0819:PsiDirectoryNode" />
+              <item name="NLP" type="462c0819:PsiDirectoryNode" />
+              <item name="word2vector" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kaggle_housing_comp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kaggle_housing_comp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/com/kaggle/NLP/word2vector/resources" />
+      <recent name="$PROJECT_DIR$/com/kaggle/NLP/bagOfWords/resources" />
+      <recent name="$PROJECT_DIR$/com/kaggle/NLP/spooky_author_identification" />
+      <recent name="$PROJECT_DIR$/com/kaggle/housing/code" />
+      <recent name="$PROJECT_DIR$/com/kaggle/digit_recognition_classifier/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/com/kaggle/housing/code" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.TestingStuff">
+    <configuration name="BagOfWordsTutorial" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="kaggle_housing_comp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/kaggle/NLP/bagOfWords" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kaggle/NLP/bagOfWords/NLP_BagOfWords.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="EstimatorEntryPoint" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="kaggle_housing_comp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/kaggle/housing/code" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kaggle/housing/code/EstimatorEntryPoint.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="TestingStuff" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="kaggle_housing_comp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/kaggle/NLP/word2vector" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kaggle/NLP/word2vector/TestingStuff.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Word2Vector" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="kaggle_housing_comp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/kaggle/NLP/word2vector" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kaggle/NLP/word2vector/Word2Vector.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="testing" type="PythonConfigurationType" factoryName="Python">
+      <module name="kaggle_housing_comp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/kaggle/housing/code" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kaggle/housing/code/testing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.testing" />
+      <item itemvalue="Python.EstimatorEntryPoint" />
+      <item itemvalue="Python.BagOfWordsTutorial" />
+      <item itemvalue="Python.Word2Vector" />
+      <item itemvalue="Python.TestingStuff" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.TestingStuff" />
+        <item itemvalue="Python.Word2Vector" />
+        <item itemvalue="Python.BagOfWordsTutorial" />
+        <item itemvalue="Python.EstimatorEntryPoint" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+    <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS,SHOW_INHERITED" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="19d920d6-0da1-417e-91e3-6996141585ae" name="Default" comment="" />
+      <created>1528944447096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1528944447096</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49168646" visible="true" weight="0.32699084" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010571" side_tool="true" weight="0.39857143" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38142857" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info id="Structure" order="1" sideWeight="0.50831354" side_tool="true" weight="0.26920366" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989429" weight="0.39857143" />
+      <window_info id="Favorites" order="2" sideWeight="0.50831354" side_tool="true" weight="0.26920366" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="310" height="597" id="Documentation" order="3" side_tool="true" weight="0.3298611" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38142857" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49168646" visible="true" weight="0.32699084" />
+      <window_info id="Structure" order="1" sideWeight="0.50831354" side_tool="true" weight="0.26920366" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989429" weight="0.39857143" />
+      <window_info anchor="right" x="0" y="0" width="310" height="597" id="Documentation" order="3" side_tool="true" weight="0.3298611" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010571" side_tool="true" weight="0.39857143" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" sideWeight="0.50831354" side_tool="true" weight="0.26920366" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/com/kaggle/housing/code/StackingAveragedModel.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/com/kaggle/NLP/bagOfWords/NLP_BagOfWords.py</url>
+          <line>165</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/com/kaggle/NLP/bagOfWords/NLP_BagOfWords.py</url>
+          <line>208</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/com/kaggle/NLP/bagOfWords/NLP_BagOfWords.py</url>
+          <line>162</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/com/kaggle/NLP/word2vector/Word2Vector.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog>
+          <selected-grouping-rules>
+            <grouping-rule id="by-file" />
+          </selected-grouping-rules>
+        </breakpoints-dialog>
+      </breakpoints-dialog>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnlyOnFirst="true" notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+            <option name="notifyOnlyOnFirst" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="175" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="raw_sentence" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>raw_sentence</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/ctypes/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/com/python/learning/ClassLevelCalling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/pandas/io/common.py" />
+    <entry file="file://$PROJECT_DIR$/com/kaggle/housing/code/AveragingModels.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/matplotlib/axes/__init__.py" />
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/matplotlib/figure.py" />
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/matplotlib/pyplot.py" />
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/numpy/core/numerictypes.py" />
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/os.py" />
+    <entry file="file://$PROJECT_DIR$/com/kaggle/housing/code/testing.py" />
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/pandas/core/indexes/base.py" />
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/sklearn/pipeline.py" />
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/sklearn/linear_model/stochastic_gradient.py" />
+    <entry file="file://$PROJECT_DIR$/com/kaggle/housing/code/.ipynb_checkpoints/HousingCom_Regression_applied_Ames-checkpoint.ipynb" />
+    <entry file="file://$PROJECT_DIR$/com/kaggle/housing/code/HousingCom_Regression_applied_Ames_dataset.py" />
+    <entry file="file://$PROJECT_DIR$/com/kaggle/housing/code/HousingCom_Regression_applied_Ames.ipynb" />
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/pandas/io/parsers.py" />
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/sklearn/cross_validation.py" />
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/codecs.py" />
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/numpy/__init__.py" />
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.1/python_stubs/-932053998/numpy/core/umath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="3036" column="4" selection-start-line="3036" selection-start-column="4" selection-end-line="3036" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/sklearn/model_selection/_split.py" />
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/sklearn/model_selection/_validation.py" />
+    <entry file="file://$PROJECT_DIR$/com/kaggle/amazon_emp_access/classifier_corrected.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="78" column="53" lean-forward="true" selection-start-line="78" selection-start-column="53" selection-end-line="78" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kaggle/StumbleUponEverGreenClassificationChallenge/beat_bench.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kaggle/digit_recognition_classifier/resources/sample_submission.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kaggle/housing/code/kernel.ipynb" />
+    <entry file="file://$PROJECT_DIR$/com/kaggle/housing/code/StackingEnsamblingkernel.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kaggle/NLP/spooky_author_identification/abhishekKernal.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python3.6/site-packages/sklearn/utils/validation.py" />
+    <entry file="file://$PROJECT_DIR$/com/kaggle/housing/code/StackingAveragedModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="24" column="79" selection-start-line="24" selection-start-column="79" selection-end-line="24" selection-end-column="79" />
+          <folding>
+            <element signature="e#21#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="1067" selection-start-line="1067" selection-end-line="1067" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python2.7/site-packages/sklearn/pipeline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="675" column="8" selection-start-line="675" selection-start-column="8" selection-end-line="675" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python2.7/site-packages/sklearn/preprocessing/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="1264" column="8" selection-start-line="1264" selection-start-column="8" selection-end-line="1264" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kaggle/NLP/bagOfWords/resources/unlabeledTrainData.tsv">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kaggle/housing/code/EstimatorEntryPoint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="113" selection-start-line="113" selection-end-line="124" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python2.7/site-packages/sklearn/feature_extraction/text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="957" column="8" selection-start-line="957" selection-start-column="8" selection-end-line="957" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kaggle/NLP/bagOfWords/Bag_of_Words_model.csv" />
+    <entry file="file://$PROJECT_DIR$/com/kaggle/NLP/bagOfWords/resources/testData.tsv">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kaggle/NLP/word2vector/resources/testData.tsv">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python2.7/site-packages/numpy/core/numerictypes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="239" selection-start-line="239" selection-end-line="239" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python2.7/site-packages/numpy/compat/py3k.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python2.7/site-packages/numpy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="117" selection-start-line="117" selection-end-line="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python2.7/site-packages/nltk/tokenize/punkt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="549" selection-start-line="549" selection-end-line="549" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kaggle/NLP/bagOfWords/NLP_BagOfWords.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="39" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kaggle/NLP/word2vector/resources/labeledTrainData_subset.tsv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python2.7/site-packages/gensim/models/word2vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="833" selection-start-line="833" selection-end-line="833" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/kaggle_housing_comp/lib/python2.7/site-packages/sklearn/utils/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="163" selection-start-line="163" selection-end-line="163" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kaggle/NLP/word2vector/Word2Vector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-577">
+          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kaggle/NLP/word2vector/TestingStuff.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
