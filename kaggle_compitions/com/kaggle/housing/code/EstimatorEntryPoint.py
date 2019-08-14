@@ -42,22 +42,28 @@ class SimpleModelAssembler(BaseEstimator, RegressorMixin, TransformerMixin):
 
     # we define clones of the original models to fit the data in
     def fit(self, X, y):
-        self.models_ = [clone(model) for model in self.models]
+        self.models = [clone(model) for model in self.models]
         # for cloned_model in self.models:
         #     self.models_.append(clone(cloned_model))
 
         # Train cloned base models
-        for model in self.models_:
+        for model in self.models:
             model.fit(X, y)
 
         return self
 
     # Now we do the predictions for cloned models and average them
     def predict(self, testDataSet):
-        predictions = np.column_stack([model.train_model(testDataSet) for model in self.models_])
+        trained_models = []
+        for model in self.models:
+            trained_models.append(model.predict(testDataSet))
+        predictions = np.column_stack(trained_models)
+        # below line is one line solution of above loop
+        # predictions = np.column_stack([model.predict(testDataSet) for model in self.models])
         return np.mean(predictions, axis=1)
 
-
+# process method of DataPreprocessing class excepts
+# panda's dataframe to be passed for process.
 class DataPreprocessing():
 
     def process(self, all_data):
@@ -67,14 +73,30 @@ class DataPreprocessing():
 
     def numericTranformation(self):
         # log transform skewed numeric features:
-        numeric_feats = self.all_data.dtypes[self.all_data.dtypes != "object"].index
+        numeric_features = self.all_data.dtypes[self.all_data.dtypes != "object"].index
 
-        skewed_feats = self.all_data[numeric_feats].apply(lambda x: skew(x.dropna()))  # compute skewness
-        skewed_feats = skewed_feats[abs(skewed_feats) > 0.75]
-        skewed_feats = skewed_feats.index
-        self.all_data[skewed_feats] = np.log1p(self.all_data[skewed_feats])
+        # remove missing values and finding skeweness value of complete dataframe
+        # compute skewness fo numeric columns after dropping missing values.
+        feature_skew_val = self.all_data[numeric_features].apply(lambda x: skew(x.dropna()))
 
+        print("=====================")
+        print(feature_skew_val)
+        print("=====================")
+        # extracting dataframe whose skewness is greater than 75%
+        skewed_features = feature_skew_val[abs(feature_skew_val) > 0.75]
+        print(skewed_features)
+        print("======================")
+
+        skewed_features_column_index = skewed_features.index
+        print(skewed_features_column_index)
+        print("======================")
+
+        # log1p to all skewed numerical columns
+        self.all_data[skewed_features_column_index] = np.log1p(self.all_data[skewed_features_column_index])
+        print(skewed_features_column_index)
+        print("======================")
     def catagoricalTransformation(self):
+        # Adding one hot encoding to all categorical data
         self.all_data = pd.get_dummies(self.all_data)
         # filling NA's with the mean of the column:
         self.all_data = self.all_data.fillna(self.all_data.mean())
@@ -94,18 +116,19 @@ class ModelAssemblerEntryPoint:
         self.dataProcessing(self)
         # stacking model selection
         base_models = (self.ENet, self.GBoost, self.KRR, self.lasso)
-        #models = (self.ENet, self.GBoost, self.KRR, self.lasso)
-        stacked_averaged_models = StackingAveragedModel(base_models,meta_model=self.lasso)
+        # models = (self.ENet, self.GBoost, self.KRR, self.lasso)
+        stacked_averaged_models = StackingAveragedModel(base_models, meta_model=self.lasso)
         score = self.rmsle_cv(self, stacked_averaged_models, self.X_train, self.train_y)
         print(score)
         print("\n Mean Score: {:.4f} ({:.4f})\n".format(score.mean(), score.std()))
 
     def assembelModels(self):
-        self.dataProcessing(self)
+        self.dataProcessing()
         # stacking model selection
         models = (self.ENet, self.GBoost, self.KRR, self.lasso)
+        # models = (self.KRR)
         modelsAssembler = SimpleModelAssembler(models)
-        score = self.rmsle_cv(self, modelsAssembler, self.X_train, self.train_y)
+        score = self.rmsle_cv(modelsAssembler, self.X_train, self.train_y)
         print(score)
         print("\n Mean Score: {:.4f} ({:.4f})\n".format(score.mean(), score.std()))
 
@@ -131,7 +154,7 @@ class ModelAssemblerEntryPoint:
 
         # Concat all the columns except index and target in all_data
         all_data = pd.concat((train.loc[:, 'MSSubClass':'SaleCondition'], test.loc[:, 'MSSubClass':'SaleCondition']))
-        # train["SalePrice"] = np.log1p(train["SalePrice"])
+        train["SalePrice"] = np.log1p(train["SalePrice"])
 
         dataProcess = DataPreprocessing
         dataProcess.process(dataProcess, all_data)
@@ -142,17 +165,29 @@ class ModelAssemblerEntryPoint:
 
 class EstimatorEntryPoint:
 
-    def simpleModelKickOff():
+    def simpleModelKickOff(self):
         print("AI started thinking")
-        modelObj = ModelAssemblerEntryPoint
-        modelObj.assembelModels(modelObj)
+        modelObj = ModelAssemblerEntryPoint()
+        modelObj.assembelModels()
 
-    def advanceModelKickOff():
+    def advanceModelKickOff(self):
         print("AI started thinking")
         modelObj = ModelAssemblerEntryPoint
         modelObj.multiLayerAssembelModels(modelObj)
 
 
-    #simpleModelKickOff()
-    advanceModelKickOff()
+if __name__ == '__main__':
+    point = EstimatorEntryPoint()
+    point.simpleModelKickOff()
+    # point.advanceModelKickOff()
     print("Its time to take some rest AI :) ")
+
+
+# SimpleModelKickOff()
+#     Results for now
+# [0.00835614 0.01040651 0.01010513 0.00846736 0.01127534]
+#  Mean Score: 0.0097 (0.0011)
+
+# without log1p self.all_data[skewed_features_column_index] = np.log1p(self.all_data[skewed_features_column_index])
+# [0.01170166 0.04439337 0.01385752 0.01011304 0.01753346]
+#  Mean Score: 0.0195 (0.0127)
